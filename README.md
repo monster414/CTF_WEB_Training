@@ -11,7 +11,7 @@ Progress
     - [x]  Char
     - [x]  Boolean
     - [x]  Time
-    - [ ]  Stacked
+    - [x]  Stacked
     - [ ]  Error Reporting
 - [ ]  File Upload
 - [ ]  File Inclusion
