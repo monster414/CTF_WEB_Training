@@ -12,7 +12,6 @@ $username = $_POST["username"];
 $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 $sql = "select username from user where username='".$username."'";
 $res = mysqli_multi_query($con, $sql);
-#$data = '{"msg":"Query Completed('.substr(md5(mt_rand(0,1000000)),0,8).')."}';
 $data = '{"msg":"';
 if($res)
 {
