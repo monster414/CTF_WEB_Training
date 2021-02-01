@@ -15,4 +15,5 @@ $res = mysqli_query($con, $sql);
 $row = mysqli_fetch_array($res);
 $data = '{"id":"'.$id.'", "username":"'.$row[1].'"}';
 echo json_encode($data);
+mysqli_close($con);
 ?>

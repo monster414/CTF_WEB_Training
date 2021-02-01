@@ -8,5 +8,7 @@
 	<p><a href="/run/sql-2.html">字符型注入</a></p>
 	<p><a href="/run/sql-3.html">布尔注入</a></p>
 	<p><a href="/run/sql-4.html">时间注入</a></p>
+	<p><a href="/run/sql-5.html">堆叠注入</a></p>
+	<p><a href="/run/sql-6.html">报错注入</a></p>
 </body>
 </html>

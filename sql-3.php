@@ -23,4 +23,5 @@ else
 	$data = '{"msg":"User Don\'t Exist."}';
 	echo json_encode($data);
 }
+mysqli_close($con);
 ?>
