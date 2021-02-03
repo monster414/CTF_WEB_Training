@@ -13,7 +13,7 @@ Progress
     - [x]  Time
     - [x]  Stacked
     - [x]  Error Reporting
-	- [ ]  Second-Order
+	- [ ]  Second Order
 	- [ ]  GBK
 - [ ]  File Upload
 - [ ]  File Inclusion
