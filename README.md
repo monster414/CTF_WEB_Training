@@ -12,7 +12,9 @@ Progress
     - [x]  Boolean
     - [x]  Time
     - [x]  Stacked
-    - [ ]  Error Reporting
+    - [x]  Error Reporting
+	- [ ]  Second-Order
+	- [ ]  GBK
 - [ ]  File Upload
 - [ ]  File Inclusion
 - [ ]  SSRF

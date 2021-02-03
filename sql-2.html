@@ -13,7 +13,7 @@
 			$.ajax
 			({
 				type: "POST",
-				url: "/run/sql-2.php",
+				url: "./sql-2.php",
 				data: {
 						'id': id,
 				},
@@ -36,10 +36,10 @@
 </head>
 <body>
 	<p>字符型注入</p>
-	<form action="/run/sql-2.php" method="POST">
+	<form action="./sql-2.php" method="POST">
 		<p><input type="Submit" value="source" name="source"></p>
 	</form>
-	<a href="/run"><input type="Submit" value="Index"></a>
+	<a href="."><input type="Submit" value="Index"></a>
 	<p>id: <input type="text" name="id" id="id" style="width:450px;"></p>
 	<p><input type="Submit" value="Submit" id="Submit"></p>
 	<span id="text"></span>

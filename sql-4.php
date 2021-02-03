@@ -3,7 +3,7 @@ error_reporting(0);
 include("./mysql.php");
 if(isset($_POST["source"]))
 {
-	echo '<a href="/run/sql-4.html"><input type="Submit" value="Back"></a><br><br>';
+	echo '<a href="./sql-4.html"><input type="Submit" value="Back"></a><br><br>';
 	highlight_file(__FILE__);	
 	exit();
 }

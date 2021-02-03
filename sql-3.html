@@ -13,7 +13,7 @@
 			$.ajax
 			({
 				type: "POST",
-				url: "/run/sql-3.php",
+				url: "./sql-3.php",
 				data: {
 						'username': username,
 				},
@@ -36,10 +36,10 @@
 </head>
 <body>
 	<p>布尔型注入</p>
-	<form action="/run/sql-3.php" method="POST">
+	<form action="./sql-3.php" method="POST">
 		<p><input type="Submit" value="source" name="source"></p>
 	</form>
-	<a href="/run"><input type="Submit" value="Index"></a>
+	<a href="."><input type="Submit" value="Index"></a>
 	<p>username: <input type="text" name="username" id="username" style="width:450px;"></p>
 	<p><input type="Submit" value="Submit" id="Submit"></p>
 	<span id="text"></span>
