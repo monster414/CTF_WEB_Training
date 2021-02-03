@@ -14,7 +14,7 @@ Progress
     - [x]  Stacked
     - [x]  Error Reporting
 	- [ ]  Second Order
-	- [ ]  GBK
+	- [x]  GBK
 - [ ]  File Upload
 - [ ]  File Inclusion
 - [ ]  SSRF
