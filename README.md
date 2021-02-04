@@ -5,7 +5,7 @@
 * 2021.02.04 SQL注入部分基本完结，二次注入暂时没有使用Ajax，接下来会补上，然后整理文件结构，再整理几个SQL注入的相关EXP，再写一下总结
 
 Progress
-- [ ]  SQL Injection
+- [x]  SQL Injection
     - [x]  HTML
     - [x]  Ajax
     - [x]  Number
