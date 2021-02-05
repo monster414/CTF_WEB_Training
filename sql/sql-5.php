@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-include("./mysql.php");
+include("../mysql.php");
 if(isset($_POST["source"]))
 {
 	echo '<a href="./sql-5.html"><input type="Submit" value="Back"></a><br><br>';

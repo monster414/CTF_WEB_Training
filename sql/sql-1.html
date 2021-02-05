@@ -2,8 +2,8 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>报错注入</title>
-	<script crossorigin="anonymous" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" src="https://lib.baomitu.com/jquery/3.5.1/jquery.min.js"></script>
+	<title>数字型注入</title>
+	<script src="../js/jquery.min.js"></script>
 	<script type="text/javascript">
 	$(function()
 	{
@@ -13,7 +13,7 @@
 			$.ajax
 			({
 				type: "POST",
-				url: "./sql-6.php",
+				url: "./sql-1.php",
 				data: {
 						'id': id,
 				},
@@ -35,11 +35,11 @@
 	</script>
 </head>
 <body>
-	<p>报错注入</p>
-	<form action="./sql-6.php" method="POST">
+	<p>数字型注入</p>
+	<form action="./sql-1.php" method="POST">
 		<p><input type="Submit" value="source" name="source"></p>
 	</form>
-	<a href="."><input type="Submit" value="Index"></a>
+	<a href="../"><input type="Submit" value="Index"></a>
 	<p>id: <input type="text" name="id" id="id" style="width:450px;"></p>
 	<p><input type="Submit" value="Submit" id="Submit"></p>
 	<span id="text"></span>

@@ -2,27 +2,27 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>堆叠注入</title>
-	<script crossorigin="anonymous" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" src="https://lib.baomitu.com/jquery/3.5.1/jquery.min.js"></script>
+	<title>报错注入</title>
+	<script src="../js/jquery.min.js"></script>
 	<script type="text/javascript">
 	$(function()
 	{
 		$('#Submit').click(function()
 		{
-			var username = $('#username').val();
+			var id = $('#id').val();
 			$.ajax
 			({
 				type: "POST",
-				url: "./sql-5.php",
+				url: "./sql-6.php",
 				data: {
-						'username': username,
+						'id': id,
 				},
 				datatype: "json",
 				success: function(msg)
 				{
 					var data = JSON.parse(msg);
 					$('#text').empty();
-					$('#text').html(data.msg);
+					$('#text').html("id: " + data.id + "<br>username: " + data.username);
 					console.log(data);
 				},
 				error:function(data)
@@ -35,12 +35,12 @@
 	</script>
 </head>
 <body>
-	<p>堆叠注入</p>
-	<form action="./sql-5.php" method="POST">
+	<p>报错注入</p>
+	<form action="./sql-6.php" method="POST">
 		<p><input type="Submit" value="source" name="source"></p>
 	</form>
-	<a href="."><input type="Submit" value="Index"></a>
-	<p>username: <input type="text" name="username" id="username" style="width:450px;"></p>
+	<a href="../"><input type="Submit" value="Index"></a>
+	<p>id: <input type="text" name="id" id="id" style="width:450px;"></p>
 	<p><input type="Submit" value="Submit" id="Submit"></p>
 	<span id="text"></span>
 </body>

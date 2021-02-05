@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>二次注入</title>
-	<!--<script crossorigin="anonymous" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" src="https://lib.baomitu.com/jquery/3.5.1/jquery.min.js"></script>
+	<!--<script src="/js/jquery.min.js"></script>
 	<script type="text/javascript">
 	$(function()
 	{
@@ -39,7 +39,7 @@
 	<form action="./sql-7.php" method="POST">
 		<p><input type="Submit" value="source" name="source"></p>
 	</form>
-	<a href="."><input type="Submit" value="Index"></a>
+	<a href="../"><input type="Submit" value="Index"></a>
 	<form action="./sql-7.php" method="POST">
 		<p>name: <input type="text" name="name" id="name" style="width:450px;"></p>
 		<p>content: <input type="text" name="content" id="content" style="width:450px;"></p>
@@ -53,7 +53,7 @@
 </html>
 <?php
 #error_reporting(0);
-include("./mysql.php");
+include("../mysql.php");
 #header('Content-type:text/json; charset=utf-8');
 function comment($name, $content, $con)
 {
