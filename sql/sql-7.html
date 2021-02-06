@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>二次注入</title>
+	<script src="../js/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(function()
+	{
+		$('#Submit').click(function()
+		{
+			var name = $('#name').val();
+			var content = $('#content').val();
+			$.ajax
+			({
+				type: "POST",
+				url: "./sql-7.php",
+				data: {
+						'name': name,
+						'content': content
+				},
+				datatype: "json",
+				success: function(msg)
+				{
+					var data = JSON.parse(msg);
+					$('#text').empty();
+					$('#text').html(data.msg);
+					console.log(data);
+				},
+				error:function(data)
+				{
+					console.log(data);
+				}
+			})
+		})
+		$('#delete').click(function()
+		{
+			$.ajax
+			({
+				type: "POST",
+				url: "./sql-7.php",
+				data: {
+						'delete':'delete'
+				},
+				datatype: "json",
+				success: function(msg)
+				{
+					var data = JSON.parse(msg);
+					$('#text').empty();
+					$('#text').html(data.msg);
+					console.log(data);
+				},
+				error:function(data)
+				{
+					console.log(data);
+				}
+			})
+		})
+	})
+	</script>
+</head>
+<body>
+	<p>二次注入</p>
+	<form action="./sql-7.php" method="POST">
+		<p><input type="Submit" value="source" name="source"></p>
+	</form>
+	<a href="../"><input type="Submit" value="Index"></a>
+	<p>name: <input type="text" name="name" id="name" style="width:450px;"></p>
+	<p>content: <input type="text" name="content" id="content" style="width:450px;"></p>
+	<p><input type="Submit" value="Submit" id="Submit"></p>
+	<p><input type="Submit" value="Delete" id="delete"></p>
+	<span id="text"></span>	
+</body>
+</html>
