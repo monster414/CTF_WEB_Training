@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 </head>
 <body>
+	<p><strong style="font-size: 30px;">SQL注入</strong></p>
 	<p><a href="./sql/sql-1.html">数字型注入</a></p>
 	<p><a href="./sql/sql-2.html">字符型注入</a></p>
 	<p><a href="./sql/sql-3.html">布尔注入</a></p>
