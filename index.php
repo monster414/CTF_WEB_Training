@@ -10,7 +10,7 @@
 	<p><a href="./sql/sql-4.html">时间注入</a></p>
 	<p><a href="./sql/sql-5.html">堆叠注入</a></p>
 	<p><a href="./sql/sql-6.html">报错注入</a></p>
-	<p><a href="./sql/sql-7.php">二次注入</a></p>
+	<p><a href="./sql/sql-7.html">二次注入</a></p>
 	<p><a href="./sql/sql-8.html">GBK注入</a></p>
 </body>
 </html>

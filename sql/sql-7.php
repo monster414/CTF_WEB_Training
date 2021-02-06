@@ -1,7 +1,6 @@
 <?php
 #error_reporting(0);
 include("../mysql.php");
-header('Content-type:text/json; charset=utf-8');
 function comment($name, $content, $con, $data)
 {
 	$sql = "select name from msg where name='".$name."'";
@@ -58,6 +57,7 @@ if(isset($_POST["source"]))
 	highlight_file(__FILE__);
 	exit();
 }
+header('Content-type:text/json; charset=utf-8');
 $data = '{"msg":"';
 $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 if(isset($_POST["name"]) && isset($_POST["content"]))
