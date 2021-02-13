@@ -18,6 +18,13 @@ Progress
 	- [x]  Second Order
 	- [x]  GBK
 - [ ]  File Upload
+	- [x]  JS
+	- [ ]  %00
+	- [ ]  Content Detection
+	- [ ]  exif_imagetype
+	- [ ]  Blacklist
+	- [ ]  .htaccess
+	- [ ]  TBC
 - [ ]  File Inclusion
 - [ ]  SSRF
 - [ ]  CSRF
