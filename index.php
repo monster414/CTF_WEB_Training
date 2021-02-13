@@ -13,5 +13,7 @@
 	<p><a href="./sql/sql-6.html">报错注入</a></p>
 	<p><a href="./sql/sql-7.html">二次注入</a></p>
 	<p><a href="./sql/sql-8.html">GBK注入</a></p>
+	<p><strong style="font-size: 30px;">文件上传</strong></p>
+	<p><a href="./file_upload/file_upload-1.php">JS限制</a></p>
 </body>
 </html>

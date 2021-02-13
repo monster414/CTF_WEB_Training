@@ -47,6 +47,7 @@ select id from user where id=1
 select id from user where id='1'
 ```
 这里所加的引号并不会执行SQL语句的执行
+
 而数字型与字符型的区别在于PHP中的SQL语句是否使用了引号来对数据进行闭合
 
 "万能密码"的漏洞环境所使用的SQL语句一般为
@@ -61,7 +62,9 @@ select * from user where username='' or 1#' and password='$password'
 ```
 
 而此处的Boolean漏洞环境可以通过用户是否存在作为回显，进行逻辑盲注
+
 时间盲注的利用往往存在于无差别回显的情况下，这时无法通过回显来进行SQL查询的逻辑判断，只能通过时间延迟来进行判断
+
 如果回显的内容为SQL语句查询出的内容，则可以通过联合查询来快速地得到信息，但是需要注意，最好使得原SQL语句无法查询出数据，否则可能会无法回显出联合查询得出的结果
 
 报错注入在于mysqli_error()这个函数的使用
