@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<title>目录</title>
 </head>
 <body>
 	<p><strong style="font-size: 30px;">SQL注入</strong></p>
