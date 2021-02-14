@@ -35,7 +35,7 @@ CREATE TABLE `msg` (
 
 LOCK TABLES `msg` WRITE;
 /*!40000 ALTER TABLE `msg` DISABLE KEYS */;
-INSERT INTO `msg` VALUES ('admin\' union select password from user where username=0x666c6167#','');
+INSERT INTO `msg` VALUES ('',''),('admin\' union select password from user where username=0x666c6167#','');
 /*!40000 ALTER TABLE `msg` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -73,4 +73,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-02-04 23:54:37
+-- Dump completed on 2021-02-14 12:52:55
