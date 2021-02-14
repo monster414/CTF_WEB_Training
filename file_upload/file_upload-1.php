@@ -8,7 +8,7 @@
 	{
 		var filename = file_upload.value;
 		var mime = filename.toLowerCase().substr(filename.lastIndexOf("."));
-		if(mime != ".jpg" && mime != ".png" && mime != ".bmp" && mime != ".ico" && mime != ".gif")
+		if(mime != ".jpg" && mime != ".png" && mime != ".gif")
 		{
 			alert("仅允许上传jpg/png/bmp/ico/gif文件");
 			file_upload.outerHTML = file_upload.outerHTML;
@@ -22,6 +22,7 @@
 		<p><input type="Submit" value="source" name="source"></p>
 	</form>
 	<a href="../"><input type="Submit" value="Index"></a>
+	<br><br>
 	<form action="./file_upload-1.php" method="POST" enctype="multipart/form-data">
 		<input type="file" name="file" onchange="dist(this)" />
 		<br><br>
