@@ -18,6 +18,10 @@
 </head>
 <body>
 	<p>JS限制</p>
+	<form action="./file_upload-1.php" method="POST">
+		<p><input type="Submit" value="source" name="source"></p>
+	</form>
+	<a href="../"><input type="Submit" value="Index"></a>
 	<form action="./file_upload-1.php" method="POST" enctype="multipart/form-data">
 		<input type="file" name="file" onchange="dist(this)" />
 		<br><br>
@@ -27,9 +31,16 @@
 </html>
 <?php
 error_reporting(0);
+if(isset($_POST["source"]))
+{
+	echo '<a href="./file_upload-1.php"><input type="Submit" value="Back"></a><br><br>';
+	highlight_file(__FILE__);	
+	exit();
+}
 if(isset($_FILES["file"]))
 {
-	move_uploaded_file($_FILES["file"]["tmp_name"], "../upload/".$_FILES["file"]["name"]);
-	echo "<br><a href=../upload/".$_FILES["file"]["name"].">".$_FILES["file"]["name"]."</a>";
+	$name = $_FILES["file"]["name"];
+	move_uploaded_file($_FILES["file"]["tmp_name"], "../upload/".$name);
+	echo "<br><a href=../upload/".$name.">".$name."</a>";
 }
 ?>
