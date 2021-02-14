@@ -21,11 +21,11 @@ Progress
 - [ ]  File Upload
 	- [x]  JS
 	- [x]  %00
-	- [ ]  Competition
-	- [ ]  Content Detection
-	- [ ]  Content-Type
+	- [x]  Competition
+	- [x]  Content
+	- [x]  MIME
 	- [ ]  exif_imagetype
-	- [ ]  Blacklist
+	- [x]  Blacklist
 	- [ ]  .htaccess
 	- [ ]  TBC
 - [ ]  File Inclusion
