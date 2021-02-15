@@ -5,6 +5,7 @@
 * 2021.02.04 SQL注入部分基本完结，二次注入暂时没有使用Ajax，接下来会补上，然后整理文件结构，再整理几个SQL注入的相关EXP，再写一下总结
 * 2021.02.06 SQL注入部分完结
 * 2021.02.14 文件上传%00截断需要PHP 5.2的版本，大概之后还需要制作docker
+* 2021.02.15 文件上传部分完结
 
 Progress
 - [x]  SQL Injection
@@ -18,16 +19,15 @@ Progress
     - [x]  Error Reporting
 	- [x]  Second Order
 	- [x]  GBK
-- [ ]  File Upload
+- [x]  File Upload
 	- [x]  JS
 	- [x]  %00
 	- [x]  Competition
 	- [x]  Content
 	- [x]  MIME
-	- [ ]  exif_imagetype
+	- [x]  .user.ini
 	- [x]  Blacklist
-	- [ ]  .htaccess
-	- [ ]  TBC
+	- [x]  .htaccess
 - [ ]  File Inclusion
 - [ ]  SSRF
 - [ ]  CSRF
