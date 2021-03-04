@@ -84,3 +84,10 @@ select * from user where username='' or 1#' and password='$password'
 二次注入的原理在于，插入数据时使用了addslashes()函数，查询时则没有使用addslashes()函数，使得引号插入了查询时的SQL语句
 
 GBK注入的原因是因为GBK编码与addslashes()函数，\作为转义符来转义引号，其十六进制值为0x5C。而GBK编码的高位范围为0x81\~0xFE，低位范围为0x40\~0xFE，在\之前插入一个高位范围的字符，则会被GBK编码将两个字符识别一个GBK字符，从而使得引号进行逃逸
+
+# File Upload #
+
+## Payload ##
+
+## 总结 ##
+
