@@ -134,4 +134,11 @@ hp
 ```
 
 ## 总结 ##
->>>>>>> 521eaedb558cb30729e3aed04dff6839cf23a1ff
+
+%00截断的原因在于使用了HTTP传参的方式去确定上传相对路径，而该相对路径之后会拼接其他内容，那么就可以通过控制这个参数，插入%00进行截断即可(php < 5.3.4, magic_quotes_gpc=off)
+
+内容检测可以使用php代码的其他写法来进行Bypass
+
+.user.ini中的``auto_prepend_file``与``auto_append_file``分别对应在文件头包含目标文件与文件尾包含目标文件，，这里的包含与require，inquire等函数类似，且影响范围为.user.ini同目录下的php文件
+
+.htaccess可以对Apache的解析规则进行修改，且优先级高于全局设置
