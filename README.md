@@ -6,6 +6,7 @@
 * 2021.02.06 SQL注入部分完结
 * 2021.02.14 文件上传%00截断需要PHP 5.2的版本，大概之后还需要制作docker
 * 2021.02.15 文件上传部分完结
+* 2021.03.05 文件包含部分完结
 
 Progress
 - [x]  SQL Injection
@@ -135,7 +136,7 @@ hp
 
 内容检测可以使用php代码的其他写法来进行Bypass
 
-.user.ini中的``auto_prepend_file``与``auto_append_file``分别对应在文件头包含目标文件与文件尾包含目标文件，，这里的包含与require，include等函数类似，且影响范围为.user.ini同目录下的php文件
+.user.ini中的``auto_prepend_file``与``auto_append_file``分别对应在文件头包含目标文件与文件尾包含目标文件，这里的包含与require，include等函数类似，且影响范围为.user.ini同目录下的php文件
 
 .htaccess可以对Apache的解析规则进行修改，且优先级高于全局设置
 
