@@ -10,12 +10,7 @@
 		<p><input type="Submit" value="source" name="source"></p>
 	</form>
 	<a href="../"><input type="Submit" value="Index"></a>
-	<br><br>
-	<form action="./ssrf.php" method="POST" enctype="multipart/form-data">
-		<input type="file" name="file" />
-		<br><br>
-		<input type="submit" value="submit" />
-	</form>
+	<br>
 </body>
 </html>
 <?php
