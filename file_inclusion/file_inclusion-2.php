@@ -16,8 +16,7 @@
 		<br><br> 	
 		<input type="submit" value="submit" />
 	</form>
-	<p><a href="./shell.zip">hint1<a></p>
-	<p><a href="./shell.gz">hint2<a></p>
+	<p><a href="./shell.zip">hint<a></p>
 </body>
 </html>
 <?php
