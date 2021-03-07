@@ -21,12 +21,17 @@ if(isset($_POST["source"]))
 	highlight_file(__FILE__);
 	exit();
 }
-if(isset($_GET["url"])!= $_GET["url"] != "")
+if(isset($_GET["url"]) && $_GET["url"] != "")
 {
-	
+	$url = $_GET["url"];
+	$con = curl_init();
+	curl_setopt($con, CURLOPT_URL, $url);
+	curl_setopt($con, CURLOPT_HEADER, 0);
+	curl_exec($con);
+	curl_close($con);
 }
 else
 {
-	header('location: ./ssrf.php?url=http://127.0.0.1/');
+	header('location: ./ssrf.php?url=https://www.baidu.com/');
 }
 ?>
