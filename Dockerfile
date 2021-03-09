@@ -4,8 +4,8 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 COPY run.sql /run.sql
 COPY init.sh /init.sh
-COPY libzip-1.2.0.tar.gz /usr/local/src
-COPY zip-1.15.5.tgz /usr/local/src
+COPY ./src/libzip-1.2.0.tar.gz /usr/local/src
+COPY ./src/zip-1.15.5.tgz /usr/local/src
 RUN rm -fr /var/www/html && \
 	chmod +x /init.sh && \
 	apt-get -y install zlib1g zlib1g-dev && \
