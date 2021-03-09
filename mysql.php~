@@ -1,6 +1,0 @@
-<?php
-$dbuser = "";
-$dbpass = "";
-$dbname = "";
-$dbhost = "";
-?>

@@ -1,0 +1,11 @@
+--2021-03-09 20:59:35--  http://wget/
+Resolving wget (wget)... failed: Name or service not known.
+wget: unable to resolve host address ‘wget’
+--2021-03-09 20:59:35--  https://libzip.org/download/libzip-1.2.0.tar.gz
+Resolving libzip.org (libzip.org)... 5.2.73.210, 2a04:52c0:101:2e6::de6c
+Connecting to libzip.org (libzip.org)|5.2.73.210|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1514966 (1.4M) [application/x-gzip]
+Saving to: ‘libzip-1.2.0.tar.gz’
+
+libzip-1.2.0.t   0%       0  --.-KB/s                   libzip-1.2.0.t   0%   8.00K  17.3KB/s                   libzip-1.2.0.t   1%  24.00K  26.1KB/s                   libzip-1.2.0.t   2%  40.00K  24.2KB/s                   libzip-1.2.0.t   3%  56.00K  13.7KB/s    eta 1m 44s     libzip-1.2.0.t   4%  72.00K  14.4KB/s    eta 1m 44s     libzip-1.2.0.t   5%  88.00K  14.8KB/s    eta 94s        libzip-1.2.0.t   7% 104.00K  15.7KB/s    eta 94s        libzip-1.2.0.t   8% 120.00K  17.4KB/s    eta 94s        libzip-1.2.0.t   9% 136.00K  19.0KB/s    eta 71s        libzip-1.2.0.t  10% 152.00K  14.4KB/s    eta 92s        libzip-1.2.0.t  11% 168.00K  12.7KB/s    eta 1m 43s     libzip-1.2.0.t  12% 184.00K  13.2KB/s    eta 1m 43s     libzip-1.2.0.t  13% 200.00K  13.5KB/s    eta 95s        libzip-1.2.0.t  14% 216.00K  13.7KB/s    eta 95s        libzip-1.2.0.t  15% 232.00K  13.9KB/s    eta 90s        libzip-1.2.0.t  16% 248.00K  14.5KB/s    eta 90s        libzip-1.2.0.t  17% 264.00K  13.6KB/s    eta 89s        libzip-1.2.0.t  18% 280.00K  14.0KB/s    eta 89s        libzip-1.2.0.t  20% 296.00K  13.3KB/s    eta 89s        libzip-1.2.0.t  21% 312.00K  13.4KB/s    eta 87s        libzip-1.2.0.t  22% 328.00K  13.6KB/s    eta 87s        libzip-1.2.0.t  23% 344.00K  13.6KB/s    eta 81s        libzip-1.2.0.t  24% 360.00K  13.7KB/s    eta 81s        libzip-1.2.0.t  25% 376.00K  14.9KB/s    eta 75s        libzip-1.2.0.t  26% 392.00K  14.9KB/s    eta 75s        libzip-1.2.0.t  27% 408.00K  15.1KB/s    eta 71s        libzip-1.2.0.t  28% 424.00K  14.9KB/s    eta 71s        libzip-1.2.0.t  29% 440.00K  14.3KB/s    eta 69s        libzip-1.2.0.t  30% 456.00K  14.0KB/s    eta 69s        libzip-1.2.0.t  31% 472.00K  15.0KB/s    eta 68s        libzip-1.2.0.t  32% 488.00K  10.3KB/s    eta 90s        
