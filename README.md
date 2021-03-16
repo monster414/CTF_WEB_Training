@@ -213,7 +213,7 @@ zlib协议与zip相似，但是是用于处理gz压缩包，用于包含非gz文
 compress.zlib://shell.gz
 ```
 
-php://input用于流输入，enctype="multipart/form-data" 的时候无效
+php://input用于流输入，包含流输入时需要allow_url_include为on，enctype="multipart/form-data" 的时候无效
 
 # RCE #
 
