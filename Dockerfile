@@ -8,7 +8,8 @@ COPY ./src/libzip-1.2.0.tar.gz /usr/local/src
 COPY ./src/zip-1.15.5.tgz /usr/local/src
 RUN rm -fr /var/www/html && \
 	chmod +x /init.sh && \
-	apt-get -y install zlib1g zlib1g-dev && \
+	apt-get update && \
+	apt-get -y install zlib1g zlib1g-dev redis-server && \
 	cd /usr/local/src/ && \
 	tar -zxvf libzip-1.2.0.tar.gz && \
 	cd libzip-1.2.0 && \
