@@ -9,7 +9,7 @@
 	<form action="./file_upload-2.php" method="POST">
 		<p><input type="Submit" value="source" name="source"></p>
 	</form>
-	<a href="../"><input type="Submit" value="Index"></a>
+	<a href="http://0.0.0.0:8888/"><input type="Submit" value="Index"></a>
 	<br><br>
 	<form action="./file_upload-2.php?path=../upload/" method="POST" enctype="multipart/form-data">
 		<input type="file" name="file" />
